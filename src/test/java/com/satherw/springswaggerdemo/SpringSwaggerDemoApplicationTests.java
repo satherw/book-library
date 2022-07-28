@@ -26,8 +26,8 @@ class SpringSwaggerDemoApplicationTests {
     void getAllBooks() throws Exception {
         // given there are two books known to the app
         mockMvc.perform(
-                get("/books")
-        )
+                        get("/books")
+                )
                 .andExpect(
                         MockMvcResultMatchers.jsonPath("*", hasSize(2)));
         // when we add a third book

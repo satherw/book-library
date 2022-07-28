@@ -2,27 +2,33 @@ package com.satherw.springswaggerdemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BookController {
-    ArrayList<Book> booksList = new ArrayList<>(Arrays.asList(new Book("Domain-Driven Design", "Eric Evans"), new Book("Extreme Programming Explained", "Kent Beck")));
+
+    private BookRepository bookRepository;
+
+    public BookController(BookRepository bookRepository) {
+
+        this.bookRepository = bookRepository;
+    }
 
     @GetMapping(value = "/books")
-    public List<Book> getBooks() {
-        return this.booksList;
+    public Iterable<Book> getBooks() {
+        return this.bookRepository.findAll();
     }
 
     @GetMapping(value = "/books/{author}")
-    public List<Book> getBooks(@PathVariable(name="author") String author) {
-        return this.booksList.stream().filter(x -> x.author().contains(author)).toList();
+    public List<Book> getBooks(@PathVariable(name = "author") String author) {
+        return Collections.emptyList();
     }
 
     @PostMapping(value = "/books")
-    public String createBook(@RequestBody Book book) {
-        this.booksList.add(book);
-        return "Book is saved successfully";
+    public void createBook(@RequestBody Book book) {
+        this.bookRepository.save(book);
     }
 }
