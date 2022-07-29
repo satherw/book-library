@@ -12,3 +12,26 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.book-icon h3 {
+  margin: 0;
+}
+
+.book-icon {
+  padding: 15px;
+  border-style: solid;
+  margin: 15px;
+}
+
+.book-metadata {
+  display: flex;
+  justify-content: space-around;
+}
+
+.author-name {
+
+}
+
+.tag-name {
+
+}

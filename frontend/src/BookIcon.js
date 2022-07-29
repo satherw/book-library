@@ -3,10 +3,12 @@ import "./App.css";
 
 const BookIcon = (props) => {
   return (
-    <div>
+    <div className="book-icon">
       <h3>{props.book.name}</h3>
-      <p>{props.book.author}</p>
-      <p>{props.book.tag}</p>
+      <div className="book-metadata">
+          <p>{props.book.author}</p>
+          <p className="tag-name">{props.book.tag}</p>
+      </div>
     </div>
   );
 };
