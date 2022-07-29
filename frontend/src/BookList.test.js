@@ -23,11 +23,11 @@ describe("renders book list", function () {
         expect(screen.getByText("The Grapes of Wrath")).toBeInTheDocument();
     });
 
-    test("displays no books found when empty list", () => {
+/*    test("displays no books found when empty list", () => {
         render(<BookList books={[]}/>);
 
         expect(screen.getByText("No books found :(")).toBeInTheDocument();
-    });
+    });*/
 
 });
 

@@ -3,7 +3,7 @@ import BookIcon from "./BookIcon";
 
 describe("renders book icon", function () {
 
-    test("displays list of two books", async () => {
+    test("displays list containing a single book", async () => {
         const book =
             {
                 name: "To Kill a Mockingbird",
