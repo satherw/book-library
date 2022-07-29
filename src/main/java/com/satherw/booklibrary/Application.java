@@ -1,4 +1,4 @@
-package com.satherw.springswaggerdemo;
+package com.satherw.booklibrary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

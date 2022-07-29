@@ -1,4 +1,4 @@
-package com.satherw.springswaggerdemo;
+package com.satherw.booklibrary;
 
 import java.util.concurrent.atomic.AtomicLong;
 

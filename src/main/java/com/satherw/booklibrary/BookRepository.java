@@ -1,4 +1,4 @@
-package com.satherw.springswaggerdemo;
+package com.satherw.booklibrary;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

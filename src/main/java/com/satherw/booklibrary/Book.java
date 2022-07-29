@@ -1,6 +1,5 @@
-package com.satherw.springswaggerdemo;
+package com.satherw.booklibrary;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
