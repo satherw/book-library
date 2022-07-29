@@ -64,7 +64,7 @@ const CreateBook = () => {
                 <select name="tag">
                   <option value="Engineering">Engineering</option>
                   <option value="Design">Design</option>
-                  <option value="Project-Management">Project-Management</option>
+                  <option value="Refactoring">Refactoring</option>
                   <option value="New-Hire">New-Hire</option>
                   <option value="Leadership">Leadership</option>
                   <option value="Fun">Fun</option>
@@ -77,7 +77,11 @@ const CreateBook = () => {
           </button>
         </form>
       </div>
-      {<div style={{color: "white", padding: "15px"}}>{error && <h4>Error: please fill out entire form.</h4>}</div>}
+      {
+        <div style={{ color: "white", padding: "15px" }}>
+          {error && <h4>Error: please fill out entire form.</h4>}
+        </div>
+      }
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Tag = (props) => {
     case "Design": {
       return <p className="tag" style={{backgroundColor: "rgba(136, 78, 160)"}}>{props.tag}</p>;
     }
-    case "Project-Management": {
+    case "Refactoring": {
       return <p className="tag" style={{backgroundColor: "rgba(241, 196, 15)"}}>{props.tag}</p>;
     }
     case "Leadership": {

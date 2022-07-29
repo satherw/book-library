@@ -44,10 +44,10 @@ const TagFilters = (props) => {
         className="tag"
         style={{ backgroundColor: "rgba(241, 196, 15)", cursor: "pointer" }}
         onClick={() => {
-          props.setFilter("Project-Management");
+          props.setFilter("Refactoring");
         }}
       >
-        Project-Management
+        Refactoring
       </p>
       <p
         className="tag"
