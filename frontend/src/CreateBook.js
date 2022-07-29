@@ -75,9 +75,9 @@ const CreateBook = () => {
           <button className="create-book-button" type="submit">
             Add book
           </button>
-          {<div style={{padding: "15px"}}>{error && <h4>Error: please fill out entire form.</h4>}</div>}
         </form>
       </div>
+      {<div style={{color: "white", padding: "15px"}}>{error && <h4>Error: please fill out entire form.</h4>}</div>}
     </div>
   );
 };
