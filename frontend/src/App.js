@@ -24,7 +24,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BookList books={books}></BookList>
+          <h2>Book Library</h2>
+          <BookList books={books}></BookList>
       </header>
     </div>
   );

@@ -1,8 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("renders book library application", function () {
+    beforeEach(() => {
+        fetch.resetMocks();
+    });
+
+    test("renders learn react link", async () => {
+        fetch.mockResponseOnce(JSON.stringify([{name: "test-book-1", author: "test-author-1", "tag": "test-tag-1"}]));
+
+        render(<App/>);
+        expect(await screen.findByText("Book Library")).toBeInTheDocument();
+    });
+
 });
+
