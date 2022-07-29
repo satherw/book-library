@@ -1,6 +1,6 @@
 # Book Library
 
-A springboot RESTful API endpoint that manages a list of books and persists the books in a MySQL database. End goal is to provide enough functionality to hold a majority of the Tanzu Labs recommended books and be able to organize them. 
+A springboot RESTful API endpoint that manages a list of books and persists the books in a MySQL database. End goal is to provide enough functionality to hold a majority of the Tanzu Labs recommended books and be able to organize them based on a set of tags. 
 
 ## Testing
 
