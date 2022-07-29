@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -16,7 +15,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 @AutoConfigureMockMvc(print = NONE)
 @SpringBootTest()
-@TestPropertySource(locations = {"classpath:application-test.properties"})
 @ActiveProfiles("test")
 class ApplicationTests {
 
@@ -25,14 +23,10 @@ class ApplicationTests {
 
     @Test
     void getAllBooks() throws Exception {
-        // given there are two books known to the app
-        mockMvc.perform(
-                        get("/books")
-                )
-                .andExpect(
-                        MockMvcResultMatchers.jsonPath("*", hasSize(2)));
+        // Given: two books exist in the database
+        mockMvc.perform(get("/books")).andExpect(MockMvcResultMatchers.jsonPath("*", hasSize(2)));
 
-        // when we add a third book
+        // When: a third book is added to the database
         mockMvc.perform(post("/books").header("content-type", "application/json").content("""
                 {
                         "name": "Refactoring (Second Edition)",
@@ -40,11 +34,7 @@ class ApplicationTests {
                 }
                 """)).andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 
-        // then there should be three books
-        mockMvc.perform(
-                        get("/books")
-                )
-                .andExpect(
-                        MockMvcResultMatchers.jsonPath("*", hasSize(3)));
+        // Then: three books exist in the database
+        mockMvc.perform(get("/books")).andExpect(MockMvcResultMatchers.jsonPath("*", hasSize(3)));
     }
 }
