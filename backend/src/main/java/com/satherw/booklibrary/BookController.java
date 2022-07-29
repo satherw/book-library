@@ -3,18 +3,19 @@ package com.satherw.booklibrary;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin() // TODO: Do I need to remove this or how can I locally debug?
 public class BookController {
 
     private BookRepository bookRepository;
 
-    public BookController(BookRepository bookRepository) {
-
-        this.bookRepository = bookRepository;
-    }
-
     @GetMapping(value = "/books")
     public Iterable<Book> getBooks() {
         return this.bookRepository.findAll();
+    }
+
+    public BookController(BookRepository bookRepository) {
+
+        this.bookRepository = bookRepository;
     }
 
     @GetMapping(value = "/books/{author}")
