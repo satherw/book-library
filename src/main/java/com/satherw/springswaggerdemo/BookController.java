@@ -1,7 +1,5 @@
 package com.satherw.springswaggerdemo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,8 +21,8 @@ public class BookController {
     }
 
     @GetMapping(value = "/books/{author}")
-    public List<Book> getBooks(@PathVariable(name = "author") String author) {
-        return Collections.emptyList();
+    public Iterable<Book> getBooks(@PathVariable(name = "author") String author) {
+        return this.bookRepository.findByAuthor(author);
     }
 
     @PostMapping(value = "/books")
